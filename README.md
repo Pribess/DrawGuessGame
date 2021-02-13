@@ -1,2 +1,2 @@
-# DrawGuess.io
+# DrawGuessGame
 Draw&amp;Guess web game
