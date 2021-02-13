@@ -1,4 +1,33 @@
+html {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+}
+
 body {
+    background-color: rgb(224, 221, 221);
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.colors {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+}
+
+.pallete {
+    display: flex;
+    margin-top: 50px;
 }
