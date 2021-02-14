@@ -20,11 +20,10 @@ document.getElementById("paint").style.border = "solid 3px black";
 document.getElementById("black").style.border = "solid 3px black";
 
 window.addEventListener("wheel", (event) => {
-   const value = event.deltaY / 100;
+   const value = -1 * event.deltaY / 100;
    size += value
-   console.log(size)
-   if(size < -10) {
-       size = -10;
+   if(size < 0) {
+       size = 0;
    } else if (size > 50) {
        size = 50;
    }
