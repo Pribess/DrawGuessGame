@@ -2,6 +2,8 @@ let mode = "paint";
 let color = "black";
 let size = 2;
 
+console.log("Ok")
+
 let painting = false;
 
 const canvas = document.getElementById("canvas");
@@ -19,17 +21,6 @@ ctx.lineWidth = size;
 document.getElementById("paint").style.border = "solid 3px black";
 document.getElementById("black").style.border = "solid 3px black";
 
-window.addEventListener("wheel", (event) => {
-   const value = -1 * event.deltaY / 100;
-   size += value
-   if(size < 0) {
-       size = 0;
-   } else if (size > 50) {
-       size = 50;
-   }
-   ctx.lineWidth = size;
-   resize.value = size;
-})
 
 if (canvas) {
     canvas.addEventListener("mousemove", (event) => {
@@ -56,14 +47,53 @@ if (canvas) {
     });
     canvas.addEventListener("mouseleave", (event) => {
         painting = false;
+    });
+    canvas.addEventListener("touchstart", (event) => {
+        if(mode == "fill") {
+            ctx.fillStyle = color;
+            ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+        }
+        painting = true;
+    });
+    canvas.addEventListener("touchmove", (event) => {
+        const x = event.changedTouches[0].screenX;
+        const y = event.changedTouches[0].screenY;
+        
+        if(!painting) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        } else {
+            ctx.lineTo(x, y);
+            ctx.stroke();
+        }
+    })
+    canvas.addEventListener("touchend", (event) => {
+        painting = false;
+    });
+    canvas.addEventListener("touchcancel", (event) => {
+        painting = false;
     })
 }
+
 
 if(resize) {
     resize.addEventListener("input", (event) => {
         const value = event.target.value;
         ctx.lineWidth = value;
     });
+
+    window.addEventListener("wheel", (event) => {
+        const value = -1 * event.deltaY / 100;
+        size += value
+        if(size < 0) {
+            size = 0;
+        } else if (size > 50) {
+            size = 50;
+        }
+        ctx.lineWidth = size;
+        resize.value = size;
+     })
+     
 }
 
 function selector(index) {
