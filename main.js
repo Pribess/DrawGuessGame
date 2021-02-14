@@ -16,7 +16,7 @@ const app = http.createServer((req, res) => {
             res.writeHead(404);
         } else {
             res.writeHead(200);
-            res.write(data.toString());
+            res.write(data);
         }
         res.end();
     })
