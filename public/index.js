@@ -10,7 +10,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const resize = document.getElementById("resize");
 
-const CANVAS_SIZE = 500;
+const CANVAS_SIZE = 400;
 
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
@@ -54,10 +54,13 @@ if (canvas) {
             ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
         }
         painting = true;
+        ctx.beginPath();
     });
     canvas.addEventListener("touchmove", (event) => {
         const x = event.changedTouches[0].screenX;
         const y = event.changedTouches[0].screenY;
+
+        console.log(event)
         
         if(!painting) {
             ctx.beginPath();
