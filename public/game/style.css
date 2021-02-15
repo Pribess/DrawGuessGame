@@ -1,0 +1,54 @@
+html {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+}
+
+body {
+    background-color: rgb(224, 221, 221);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.canvas {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.colors {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100px;
+}
+
+.mimg {
+    border-radius: 100px;
+}
+
+.pallete {
+    display: flex;
+    margin-top: 20px;
+}
+
+.line {
+    border: solid 1px black;
+    margin: 20px 20px;
+}
+
+.mode {
+    display: flex;
+    margin-top: 5px;
+    border-radius: 100px;
+}
+
+.resize {
+    margin-top: 10px;
+}

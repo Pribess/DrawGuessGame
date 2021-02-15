@@ -4,29 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="favicon.ico"/>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
     <title>Draw&Guess</title>
 </head>
 <body>
-    <canvas class="canvas" id="canvas"></canvas>
-    <div class="resize">
-        <input type="range" class="resize" name="resize" id="resize" min="0" max="50">
-    </div>
-    <div class="mode">
-        <div class="mode" id="paint"><img class="mimg"src="./asset/paint.png" alt="그리기" onclick="selector('paint')"></div>
-        <div class="mode" id="fill"><img class="mimg" src="./asset/fill.png" alt="채우기" onclick="selector('fill')"></div>
-    </div>
-    <div class="pallete" id="pallete">
-        <div class="colors" id="black" style="background-color: black;" onclick="selector('black')"></div>
-        <div class="colors" id="white" style="background-color: white;" onclick="selector('white')"></div>
-        <div class="colors" id="red" style="background-color: red;" onclick="selector('red')"></div>
-        <div class="colors" id="orange" style="background-color: orange;" onclick="selector('orange')"></div>
-        <div class="colors" id="yellow" style="background-color: yellow;" onclick="selector('yellow')"></div>
-        <div class="colors" id="greenyellow" style="background-color: greenyellow;" onclick="selector('greenyellow')"></div>
-        <div class="colors" id="skyblue" style="background-color: skyblue;" onclick="selector('skyblue')"></div>
-        <div class="colors" id="blue" style="background-color: blue;" onclick="selector('blue')"></div>
-        <div class="colors" id="purple" style="background-color: purple;" onclick="selector('purple')"></div>
+    <div class="container">
+        <input type="text" class="username" name="username" id="username">
+        <input type="button" class="start" value="시작" id="start">
     </div>
     <script src="index.js"></script>
 </body>
