@@ -6,16 +6,16 @@ const fs = require("fs");
 const app = http.createServer((req, res) => {
     let url = req.url;
 
-    if (url.endsWith("/")) {
-      url = url + "index.html";
-    } 
-    if (url.endsWith("js") || url.endsWith("css") || url.endsWith("html") || url.endsWith("png")) {
-        url = url + "/index.html";
+    let spliturl = url.split("?");
+
+    if (spliturl[0].endsWith("/")) {
+      spliturl[0] = spliturl[0] + "index.html";
     }
-
-    console.log(url);
-
-    fs.readFile("./public" + url, (err, data) => {
+    if(spliturl[1] != undefined) {
+    websocket.pushqueue(spliturl[1])
+    }
+        
+    fs.readFile("./public" + spliturl[0], (err, data) => {
         if (err) {
             console.error(err);
             const filebuf = fs.readFileSync("./public/error/404.html");
@@ -29,6 +29,8 @@ const app = http.createServer((req, res) => {
     });
     
 });
+
+
 
 try {
     websocket({port : 81});

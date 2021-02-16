@@ -7,18 +7,20 @@ body {
     background-color: rgb(224, 221, 221);
     padding: 0;
     margin: 0;
+    overflow: hidden;
+}
+
+.container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
 }
 
 .canvas {
     width: 400px;
     height: 400px;
     background-color: white;
-    margin-top: 20px;
     border-radius: 25px;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
@@ -51,4 +53,10 @@ body {
 
 .resize {
     margin-top: 10px;
+}
+
+.canvas_container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 100px auto;
 }

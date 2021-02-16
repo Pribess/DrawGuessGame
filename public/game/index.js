@@ -9,7 +9,7 @@ let painting = false;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const resize = document.getElementById("resize");
-
+const wss = new WebSocket("ws://1.241.111.101:81");
 
 const CANVAS_SIZE = 400;
 
@@ -132,3 +132,11 @@ function reset(index) {
     document.getElementById(index).style.border = "solid 3px black";
 }
 
+wss.onmessage = (event) => {
+    const packet = JSON.parse(event.data)
+    switch(packet.type) {
+        case 0:
+            document.getElementById("username").innerHTML = decodeURI(packet.username)
+            break;
+    }
+}
