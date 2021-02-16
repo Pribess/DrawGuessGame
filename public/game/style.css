@@ -58,5 +58,21 @@ body {
 .canvas_container {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 100px auto;
+    grid-template-columns: 200px auto 200px;
+}
+
+.chat {
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.user {
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }

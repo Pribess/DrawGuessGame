@@ -136,7 +136,7 @@ wss.onmessage = (event) => {
     const packet = JSON.parse(event.data)
     switch(packet.type) {
         case 0:
-            document.getElementById("username").innerHTML = decodeURI(packet.username)
+            document.getElementById("self").innerHTML = decodeURI(packet.username)
             break;
     }
 }
